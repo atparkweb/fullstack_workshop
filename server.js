@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
+
+// Need this to serve static files (react build output files) from Heroku
 app.use(express.static(path.join(__dirname, "/build")));
 
 const port = process.env.PORT || 4000;
